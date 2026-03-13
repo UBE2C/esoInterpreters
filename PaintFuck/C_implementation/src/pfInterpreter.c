@@ -392,3 +392,28 @@ Status getMat_str(char* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
     return STAT_SUCCESS;
 
 }
+
+Status setMat_u8(uint8_t value_in, Matrix* matrix, uint32_t row, uint32_t col) {
+    if (matrix == NULL) {
+        printf("setMat_u8: error, NULL pointer provided.\n");
+        return STAT_ERROR;
+
+    }
+
+    if (matrix -> data.u8p == NULL) {
+        printf("setMat_u8: error, the data pointer is NULL.\n");
+        return STAT_ERROR;
+
+    }
+
+    uint32_t index = row * matrix -> n_col + col;
+    if (index >= matrix -> n_row * matrix -> n_col) {
+        printf("setMat_u8: error, index outside matrix bounds.\n");
+        return STAT_ERROR;
+
+    }
+
+    matrix -> data.u8p[index] = value_in;
+    return STAT_SUCCESS;
+
+}
