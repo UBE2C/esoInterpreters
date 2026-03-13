@@ -168,22 +168,22 @@ Status freeMatrix(Matrix* matrix) {
     return STAT_SUCCESS;
 }
 
-Status getMatU8(uint8_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
+Status getMat_u8(uint8_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
     if (matrix == NULL || value_out == NULL) {
-        printf("getMatU8: error, NULL pointer provided.\n");
+        printf("getMat_u8: error, NULL pointer provided.\n");
         return STAT_ERROR;
 
     }
 
     if (matrix -> data.u8p == NULL) {
-        printf("getMatU8: error, the data pointer is NULL.\n");
+        printf("getMat_ u8: error, the data pointer is NULL.\n");
         return STAT_ERROR;
 
     }
 
     uint32_t index = row * matrix -> n_col + col;
     if (index >= matrix -> n_row * matrix -> n_col) {
-        printf("getMatU8: error, index outside matrix bounds.\n");
+        printf("getMat_u8: error, index outside matrix bounds.\n");
         return STAT_ERROR;
 
     }
@@ -193,22 +193,22 @@ Status getMatU8(uint8_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) 
 
 }
 
-Status getMatU32(uint32_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
+Status getMat_u32(uint32_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
     if (matrix == NULL || value_out == NULL) {
-        printf("getMatU32: error, NULL pointer provided.\n");
+        printf("getMat_u32: error, NULL pointer provided.\n");
         return STAT_ERROR;
 
     }
 
     if (matrix -> data.u32p == NULL) {
-        printf("getMatU32: error, the data pointer is NULL.\n");
+        printf("getMat_u32: error, the data pointer is NULL.\n");
         return STAT_ERROR;
 
     }
 
     uint32_t index = row * matrix -> n_col + col;
     if (index >= matrix -> n_row * matrix -> n_col) {
-        printf("getMatU32: error, index outside matrix bounds.\n");
+        printf("getMat_u32: error, index outside matrix bounds.\n");
         return STAT_ERROR;
 
     }
@@ -218,22 +218,22 @@ Status getMatU32(uint32_t* value_out, Matrix* matrix, uint32_t row, uint32_t col
 
 }
 
-Status getMatU64(uint64_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
+Status getMat_u64(uint64_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
     if (matrix == NULL || value_out == NULL) {
-        printf("getMatU64: error, NULL pointer provided.\n");
+        printf("getMat_u64: error, NULL pointer provided.\n");
         return STAT_ERROR;
 
     }
 
     if (matrix -> data.u64p == NULL) {
-        printf("getMatU64: error, the data pointer is NULL.\n");
+        printf("getMat_u64: error, the data pointer is NULL.\n");
         return STAT_ERROR;
 
     }
 
     uint32_t index = row * matrix -> n_col + col;
     if (index >= matrix -> n_row * matrix -> n_col) {
-        printf("getMatU64: error, index outside matrix bounds.\n");
+        printf("getMat_u64: error, index outside matrix bounds.\n");
         return STAT_ERROR;
 
     }
@@ -243,22 +243,22 @@ Status getMatU64(uint64_t* value_out, Matrix* matrix, uint32_t row, uint32_t col
 
 }
 
-Status getMatI8(int8_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
+Status getMat_i8(int8_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
     if (matrix == NULL || value_out == NULL) {
-        printf("getMatI8: error, NULL pointer provided.\n");
+        printf("getMat_i8: error, NULL pointer provided.\n");
         return STAT_ERROR;
 
     }
 
     if (matrix -> data.i8p == NULL) {
-        printf("getMatI8: error, the data pointer is NULL.\n");
+        printf("getMat_i8: error, the data pointer is NULL.\n");
         return STAT_ERROR;
 
     }
 
     uint32_t index = row * matrix -> n_col + col;
     if (index >= matrix -> n_row * matrix -> n_col) {
-        printf("getMatI8: error, index outside matrix bounds.\n");
+        printf("getMat_i8: error, index outside matrix bounds.\n");
         return STAT_ERROR;
 
     }
@@ -268,22 +268,22 @@ Status getMatI8(int8_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
 
 }
 
-Status getMatI32(int32_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
+Status getMat_i32(int32_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
     if (matrix == NULL || value_out == NULL) {
-        printf("getMatI32: error, NULL pointer provided.\n");
+        printf("getMat_i32: error, NULL pointer provided.\n");
         return STAT_ERROR;
 
     }
 
     if (matrix -> data.i32p == NULL) {
-        printf("getMatI32: error, the data pointer is NULL.\n");
+        printf("getMat_i32: error, the data pointer is NULL.\n");
         return STAT_ERROR;
 
     }
 
     uint32_t index = row * matrix -> n_col + col;
     if (index >= matrix -> n_row * matrix -> n_col) {
-        printf("getMatI32: error, index outside matrix bounds.\n");
+        printf("getMat_i32: error, index outside matrix bounds.\n");
         return STAT_ERROR;
 
     }
@@ -293,27 +293,102 @@ Status getMatI32(int32_t* value_out, Matrix* matrix, uint32_t row, uint32_t col)
 
 }
 
-Status getMatI64(int64_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
+Status getMat_i64(int64_t* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
     if (matrix == NULL || value_out == NULL) {
-        printf("getMatI64: error, NULL pointer provided.\n");
+        printf("getMat_i64: error, NULL pointer provided.\n");
         return STAT_ERROR;
 
     }
 
     if (matrix -> data.i64p == NULL) {
-        printf("getMatI64: error, the data pointer is NULL.\n");
+        printf("getMat_i64: error, the data pointer is NULL.\n");
         return STAT_ERROR;
 
     }
 
     uint32_t index = row * matrix -> n_col + col;
     if (index >= matrix -> n_row * matrix -> n_col) {
-        printf("getMatI64: error, index outside matrix bounds.\n");
+        printf("getMat_i64: error, index outside matrix bounds.\n");
         return STAT_ERROR;
 
     }
 
     *value_out = matrix -> data.i64p[index];
+    return STAT_SUCCESS;
+
+}
+
+Status getMat_f32(float* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
+    if (matrix == NULL || value_out == NULL) {
+        printf("getMat_f32: error, NULL pointer provided.\n");
+        return STAT_ERROR;
+
+    }
+
+    if (matrix -> data.f32p == NULL) {
+        printf("getMat_f32: error, the data pointer is NULL.\n");
+        return STAT_ERROR;
+
+    }
+
+    uint32_t index = row * matrix -> n_col + col;
+    if (index >= matrix -> n_row * matrix -> n_col) {
+        printf("getMat_f32: error, index outside matrix bounds.\n");
+        return STAT_ERROR;
+
+    }
+
+    *value_out = matrix -> data.f32p[index];
+    return STAT_SUCCESS;
+
+}
+
+Status getMat_f64(double* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
+    if (matrix == NULL || value_out == NULL) {
+        printf("getMat_f64: error, NULL pointer provided.\n");
+        return STAT_ERROR;
+
+    }
+
+    if (matrix -> data.f64p == NULL) {
+        printf("getMat_f64: error, the data pointer is NULL.\n");
+        return STAT_ERROR;
+
+    }
+
+    uint32_t index = row * matrix -> n_col + col;
+    if (index >= matrix -> n_row * matrix -> n_col) {
+        printf("getMat_f64: error, index outside matrix bounds.\n");
+        return STAT_ERROR;
+
+    }
+
+    *value_out = matrix -> data.f64p[index];
+    return STAT_SUCCESS;
+
+}
+
+Status getMat_str(char* value_out, Matrix* matrix, uint32_t row, uint32_t col) {
+    if (matrix == NULL || value_out == NULL) {
+        printf("getMat_str: error, NULL pointer provided.\n");
+        return STAT_ERROR;
+
+    }
+
+    if (matrix -> data.str == NULL) {
+        printf("getMat_str: error, the data pointer is NULL.\n");
+        return STAT_ERROR;
+
+    }
+
+    uint32_t index = row * matrix -> n_col + col;
+    if (index >= matrix -> n_row * matrix -> n_col) {
+        printf("getMat_str: error, index outside matrix bounds.\n");
+        return STAT_ERROR;
+
+    }
+
+    *value_out = matrix -> data.str[index];
     return STAT_SUCCESS;
 
 }
