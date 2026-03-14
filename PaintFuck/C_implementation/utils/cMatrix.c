@@ -1,5 +1,3 @@
-
-
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -31,66 +29,6 @@ typedef struct Matrix {
     } data;
 
 } Matrix;
-
-
-
-
-int32_t main(int argc, char* argv[]) {
-
-    // Define and handle input arguments
-    Argument input_args[5];
-    ArgLstManager argMan = initArgManager(input_args, 5);
-
-    Status addRet;
-    addRet = addArg(&argMan, OPTIONAL, -1, "-c", "--code", true, true, "code_file");
-    if (addRet != STAT_SUCCESS) {
-        printf("Failed to add an argument to the argument manager.\n");
-        return EXIT_FAILURE;
-
-    }
-
-    addArg(&argMan, POSITIONAL, 1, NULL, "code_file", true, true, "--code");
-    if (addRet != STAT_SUCCESS) {
-        printf("Failed to add an argument to the argument manager.\n");
-        return EXIT_FAILURE;
-
-    }
-
-    addArg(&argMan, POSITIONAL, 2, NULL, "iterations", true, false, NULL);
-    if (addRet != STAT_SUCCESS) {
-        printf("Failed to add an argument to the argument manager.\n");
-        return EXIT_FAILURE;
-
-    }
-
-    addArg(&argMan, POSITIONAL, 3, NULL, "width", true, false, NULL);
-    if (addRet != STAT_SUCCESS) {
-        printf("Failed to add an argument to the argument manager.\n");
-        return EXIT_FAILURE;
-
-    }
-
-    addArg(&argMan, POSITIONAL, 4, NULL, "hight", true, false, NULL);
-    if (addRet != STAT_SUCCESS) {
-        printf("Failed to add an argument to the argument manager.\n");
-        return EXIT_FAILURE;
-
-    }
-
-    Status parseRet = parseArgs(&argMan, argc, argv);
-    if (parseRet != STAT_SUCCESS) {
-        printf("Failed to parse the input arguments.\n");
-        return EXIT_FAILURE;
-
-    }
-
-
-    // Define the 2D paint grid
-
-
-    return EXIT_SUCCESS;
-
-}
 
 
 Matrix initMatrix(DataType type, uint32_t n_row, uint32_t n_col) {
